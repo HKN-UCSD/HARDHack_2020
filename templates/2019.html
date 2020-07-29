@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://hardhacksd.com/ -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{content.base.title}}</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/HARDHack_Files/images/logo.ico"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../static/HARDHack_Files/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="../static/assets/css/noscript.css"
+    /></noscript>
+
+    <!-- Google Search linking -->
+    <meta
+      name="google-site-verification"
+      content="mgfjbIWkun1HCf7ineCmBPX8awMYdeWwXJVOS8oVjJU"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      type="text/javascript"
+      async=""
+      src="../static/HARDHack_Files/js/analytics.js"
+    ></script>
+    <!-- <script async="" src="../static/HARDHack_Files/js/js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-73543410-2");
+    </script>
+    <script src="../static/HARDHack_Files/js/jquery.min.js"></script>
+    <script src="../static/HARDHack_Files/js/countdown.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Super -->
+      <header id="super" class="alt">
+        <h1><a href="javascript:void(0)">H.A.R.D. Hack</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#Smenu" class="menuToggle"
+                ><span>Menu</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Header -->
+      <section id="header">
+        <header>
+          <h1>{{content.mainHeader.title}}</h1>
+          <p>
+            {{content.mainHeader.description}}<br />
+            <div style="display: {{content.common.isHackathonOver|getEventContentDisplay('inline')}};">
+              <span
+                id="clockdiv"
+                >placeholder</span
+              ><br />until end of hacking
+            </div>
+          </p>
+        </header>
+        <footer>
+					<a href="{{content.common.participationFormLink}}" class="button style2" target="_blank" style="display: {{content.common.isAfterParticipationRegistrationDeadline|getEventContentDisplay('inline-block')}};">Participate</a>
+					<br />
+					<a href="{{content.common.volunteerFormLink}}" class="button style1" target="_blank" style="display: {{content.common.isAfterVolunteerRegistrationDeadline|getEventContentDisplay('inline-block')}};">Volunteer</a>
+				</footer>
+      </section>
+
+      <!-- Banner -->
+      <section id="banner">
+        <header>
+          <h2>Announcements</h2>
+        </header>
+        <h4>Hacking is over! Good luck with judging!<br /></h4>
+        <footer>
+          <a
+            href="https://hard-hack-2019.devpost.com/submissions"
+            class="button style2"
+            target="_blank"
+          >
+            Last Year's Submissions</a
+          >
+        </footer>
+      </section>
+
+      <!-- About -->
+      <article id="about" class="container box style1">
+        <div class="inner">
+          <header>
+            <h2>{{content.about.header}}</h2>
+          </header>
+          <p>{{content.about.content}}</p>
+        </div>
+      </article>
+
+      <!-- FAQ -->
+      <section id="faq" class="container box style3">
+        <div>
+          <header>
+            <h2>FAQ</h2>
+            <p>Frequently Asked Questions</p>
+          </header>
+          <ul id="faqbar">
+            {% for index, faq in
+              content.faqbar.faqs|indexDataTupleFromCollection %}
+              <li
+                style="background-color: {{index|getFaqbarBGColorForIndex(baseColor=content.faqbar.baseColor, colorIncrement=content.faqbar.colorIncrement)}};"
+              >
+                <h3>{{faq.question|safe}}</h3>
+                <p>{{faq.answer|safe}}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Schedule -->
+      <article id="schedule" class="container box style1">
+        <div class="inner">
+          <header>
+            <h2>Schedule</h2>
+          </header>
+          {% for tableData in content.schedule %}
+            <table>
+              <tbody>
+                <tr>
+                  <th>{{tableData.tableHeader}}</th>
+                </tr>
+                {% for row in tableData.tableRows %}
+                  <tr>
+                    <td>{{row.datetime}}</td>
+                    <td>{{row.description}}</td>
+                    <td>{{row.location}}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endfor %}
+        </div>
+      </article>
+
+      <!-- Resources -->
+      <article id="resources" class="container box style1">
+        <div class="inner">
+          <header>
+            <h2>Resources</h2>
+          </header>
+          <h1>Parts:</h1>
+          <p>
+            <a
+              href="https://hardware.mlh.io/events/h-a-r-d-hack"
+              target="_blank"
+              >Request parts here</a
+            >
+          </p>
+          <h1>
+            Slack Channel - our main form of communication for the hackathon:
+          </h1>
+          <p>
+            <a
+              href="https://hardhackucsd2020.slack.com/join/shared_invite/enQtOTAyNjIyMzcyMjQwLWM3ZjUzZDdhMmRiM2JhYzIwY2UzMjQ5NTA3OTY5ZDI1ODJhMzBhMGEzN2Y2ZjJiNTA2NmQ3MjRmYmZjNmFiZmU"
+              target="_blank"
+              >Join the slack channel using this link!</a
+            >
+          </p>
+          <h1>HELPq - get live mentoring help:</h1>
+          <p>
+            <a href="http://help.hardhacksd.com/" target="_blank"
+              >http://help.hardhacksd.com/</a
+            >
+          </p>
+          <h1>
+            Developer Discord - a place to have your technical questions
+            answered:
+          </h1>
+          <p>
+            Discord Server name: Developer-Evosystem<br />
+            Global Server Invite Link:
+            <a href="https://discord.gg/H5ETM7C" target="_blank"
+              >https://discord.gg/H5ETM7C</a
+            ><br />
+            Direct invite to HARD Hack channel:
+            <a href="https://discord.gg/XZFhUtM" target="_blank"
+              >https://discord.gg/XZFhUtM</a
+            >
+          </p>
+          <h1>Qualcomm:</h1>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/0BwmkGDrkDJN3dE9tZnZoY2I1ekhUenlDLVZ1X3lkTjZLVVlR/view?usp=sharing"
+              target="_blank"
+              >Link to Challenge and Resources</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/1A308qjq6W4_ZIlr5jYlgwsXbLvcJnmQ6/view"
+              target="_blank"
+              >Link to DragonBoard Slides/Documentation</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/0BwmkGDrkDJN3YkNjdEdiMDJoSk1od2Vlc3MzdFpRODY2Y2dv/view?usp=sharing"
+              target="_blank"
+              >Link to Hack Kit Contents</a
+            >
+          </p>
+          <h1>Northrop Grumman:</h1>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/0BwmkGDrkDJN3NVgzNTJWVGJEX0k0Q0FVS1pFenhoWFJCVWdV/view?usp=sharing"
+              target="_blank"
+              >Link to Challenge and Resources</a
+            >
+          </p>
+          <h1>alwaysAI:</h1>
+          <p>
+            <a href="https://learn.alwaysai.co/hardhack" target="_blank"
+              >Link to Challenge and Resources/APIs</a
+            >
+          </p>
+          <h1>Digikey &amp; NKK Switches</h1>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/0B7GSka2DvofBdWVsZExJeGdJem5sQ3d1bm9Tb25KOGI4aFFj/view?usp=sharing"
+              target="_blank"
+              >Link to Challenge</a
+            >
+          </p>
+          <p>
+            <a href="https://youtu.be/iipfw4PQ6lQ" target="_blank"
+              >NKK Smart Display Overview</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/1JvKhAGk3VuEjjvNWpvgK4g-OJDRqmNnK/view?usp=sharing"
+              target="_blank"
+              >Smart Display Slides</a
+            >
+          </p>
+          <h1>Wolfram Alpha:</h1>
+          <p>
+            <a
+              href="https://docs.google.com/document/d/1-6uxGWhIA0zpguSq5oLrgbCaff9AWsoGAtNq8NH0FyE/edit"
+              target="_blank"
+              >Link to Wolfram API Instructions</a
+            >
+          </p>
+        </div>
+      </article>
+      
+      <!-- Sponsors -->
+      <article id="sponsors" class="container box style1">
+        <div class="inner">
+          <header>
+            <h2>Sponsors</h2>
+          </header>
+          {% for sponsorCategory in content.sponsors.categories %}
+            <div>
+              <p>{{sponsorCategory.name}} :</p>
+              {% for sponsor in sponsorCategory.sponsors %}
+                <img class="{{sponsorCategory.classes|join(' ')}}" src="{{sponsor.pathToImg}}" alt="{{sponsor.sponsorName}}">
+              {% endfor %}
+            </div>
+          {% endfor %}
+          <footer style="text-align: center;">
+            <p>
+              {{content.sponsors.forPossibleSponsors.message|safe}}
+            </p>
+            <a
+              href="{{content.sponsors.forPossibleSponsors.pathToSponsorshipPackage}}"
+              class="button style2"
+              target="_blank"
+              >{{content.sponsors.forPossibleSponsors.sponsorButtonText}}</a
+            >
+          </footer>
+        </div>
+      </article>
+
+      <!-- Contact -->
+      <section id="contact" class="container box style3">
+        <div class="inner">
+          <header>
+            <h2>{{content.contact.header}}</h2>
+            <p>
+              {{content.contact.content|safe}}
+            </p>
+          </header>
+        </div>
+      </section>
+
+      <section id="footer">
+        <ul class="icons">
+          {% for socialMedium in content.socialMedia %}
+            <li>
+              <a class="{{socialMedium.faClasses|join(' ')}}" href="{{socialMedium.mediaProfileLink}}">
+                <span class="label">{{socialMedium.name}}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="copyright">
+          <ul class="menu">
+            <li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <!-- Scripts -->
+    <script src="../static/HARDHack_Files/js/jquery.scrollex.min.js"></script>
+    <script src="../static/HARDHack_Files/js/jquery.scrolly.min.js"></script>
+    <script src="../static/HARDHack_Files/js/jquery.poptrox.min.js"></script>
+    <script src="../static/HARDHack_Files/js/browser.min.js"></script>
+    <script src="../static/HARDHack_Files/js/breakpoints.min.js"></script>
+    <script src="../static/HARDHack_Files/js/util.js"></script>
+    <script src="../static/HARDHack_Files/js/main.js"></script>
+    <script src="../static/HARDHack_Files/js/navbar.js"></script>
+    <div id="Smenu">
+      <ul>
+        <li>
+          <a
+            href="https://hardhacksd.com/#header"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#banner"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Announcements</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#about"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#faq"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >FAQ</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#schedule"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Schedule</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#resources"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Resources</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#sponsors"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Sponsors</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hardhacksd.com/#contact"
+            style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <!-- <a
+        href="https://hardhacksd.com/#Smenu"
+        class="close"
+        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+      ></a> -->
+    </div>
+  </body>
+</html>

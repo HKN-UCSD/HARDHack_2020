@@ -1,0 +1,143 @@
+common:
+  eventDate: &eventDate January 17th and 18th, 2020
+  eventLocation: &eventLocation Price Center West Ballroom, UC San Diego
+  isAfterParticipationRegistrationDeadline: True
+  participationFormLink: &participateLink # Please enter link here
+    "https://forms.gle/NvmJ7ioTYADFseBv5"
+  isAfterVolunteerRegistrationDeadline: True
+  volunteerFormLink: &volunteerLink # Please enter link here
+    "https://forms.gle/21AT2gmEjCURN6ABA"
+  isHackathonOver: True
+
+base:
+  title: H.A.R.D. Hack | UCSD
+
+mainHeader:
+  title: H.A.R.D. HACK
+  description: HASH OUT. ANALYZE. RESEARCH. DESIGN.
+
+about:
+  header: About
+  content: H.A.R.D. Hack is a hardware hackathon that HKN holds annually in
+    collaboration with IEEE. We provide the materials and the tools
+    needed to make a hardware hack. Come out and build something cool!
+    Anyone can attend, regardless of skill level, major, or university.
+
+faqbar:
+  baseColor: 0x00000010
+  colorIncrement: 0x00000004
+  faqs:
+    - question: What is a hackathon?
+      answer: A hackathon is a gathering where people collaboratively build a
+        project from the ground-up over a short period of time. While
+        working on a particular project, the idea is for each group
+        member to have the ability and freedom to work on whatever they
+        want.
+    - question: Is it free?
+      answer: YES! There is no fee associated with H.A.R.D. Hack. In fact,
+        there will be food, water, and hardware provided at the
+        hackathon. Just make sure to bring yourself! (And check out the
+        next question to find out what's suggested to bring.)
+    - question: What do I bring?
+      answer: These are some highly suggested items to bring-- <b>laptop</b>,
+        blanket, <b>resuable water bottle</b>, layers of clothing,
+        <b>comfortable clothes/shoes</b>, change of clothes, toothbrush,
+        deodorant, energy drinks, extra snacks, and any hardware you
+        wish to use.
+    - question: Do I need a team?
+      answer: Teams are up to 5 people, so feel free to work by yourself, in a
+        pair, or with a full team of 5! However, it is recommended to
+        form a team of 5 just because it's you and 4 other people
+        working on one project versus just yourself.
+    - question: Where is it?
+      answer: *eventLocation
+    - question: When is it?
+      answer: *eventDate
+
+schedule:
+  - tableHeader: Pre Hack Workshops
+    tableRows:
+      - datetime: Wednesday (15th)
+        description: Qualcomm Workshop
+        location: EBU1 2512 2:30 - 5:00 PM
+      - datetime: Thursday (16th)
+        description: NKK Switches Workshop
+        location: EBU1 2512 4:30 - 6:30 PM
+  - tableHeader: Friday (17th)
+    tableRows:
+      - datetime: 4:00 PM
+        description: Gates Open
+        location: PC
+      - datetime: 4:00 - 6:00 PM
+        description: Team Search
+        location: PC West Ballroom
+  - tableHeader: Day for following events # Please enter day and date here or Pre/Post Hackathon Events
+    tableRows:
+      - datetime: Time/TimeRange for the event # Please enter day(date) or time
+        description: This is a very intereting and popular event # Please provide description of event
+        location: In a land far, far away, filled with creativity # Please provide location of event
+
+sponsors:
+  categories:
+    # name:     --  This test will be used as header to all sponsors in this category (Note a colon will be added automatically)
+    # classes:  --  This will be a list of css classes that will be used to style the images in this sponsor section
+    # This will be the image that is displayed
+    # This will be the alternate Text dsplayed if image fails to laod
+    - name: Diamond Sponsors
+      classes:
+        - companyLogo
+        - diamondSponsor
+      sponsors:
+        - pathToImg: "../static/HARDHack_Files/images/jsoeece.png"
+          sponsorName: UC San Diego Jacobs School Of Engineering Electrical and Computer Engineering
+        - pathToImg: "../static/HARDHack_Files/images/TI.png"
+          sponsorName: Texas Instruments
+    - name: Gold Sponsors
+      classes:
+        - companyLogo
+        - goldSponsor
+      sponsors:
+        - pathToImg: "../static/HARDHack_Files/images/qualcomm.png"
+          sponsorName: Qualcomm
+    - name: ExampleCategory
+      classes:
+        - companyLogo
+        - sampleSponsorCategory
+      sponsors:
+        - pathToImg: "../This/Is/A/Path/To/The/CompanyLogo.png"
+          sponsorName: Example Company
+    - name: Hosted By
+      classes:
+        - companyLogo
+        - hostSponsor
+      sponsors:
+        - pathToImg: "../static/HARDHack_Files/images/IEEE_Logo.png"
+          sponsorName: IEEE UC San Diego Branch
+        - pathToImg: "../static/HARDHack_Files/images/HKN Logo White.png"
+          sponsorName: Eta Kappa Nu - Kappa Psi Chapter @ UC San Diego
+  forPossibleSponsors:
+    message: '<br />Interested in sponsoring us? Please send an email to
+    <a href="mailto:hardhack@eng.ucsd.edu">hardhackucsd@gmail.com</a>'
+    sponsorButtonText: Sponsorship Package
+    pathToSponsorshipPackage: "../static/HARDHack_Files/files/SponsorshipPackage2019.pdf"
+
+contact:
+  header: Contact Us
+  content: 
+    'For inquiries, please contact us through <a href="https://forms.gle/d4Y774BsYNzDGEzo6" target="_blank">this form</a>!'
+
+socialMedia:
+  - faClasses:
+      - icon
+      - brands
+      - fa-twitter
+    mediaProfileLink: "https://www.twitter.com/"
+    name: Twitter
+  - faClasses:
+      - icon
+      - brands
+      - fa-facebook
+    mediaProfileLink: "https://www.facebook.com/hardhackucsd/"
+    name: Facebook
+
+sideBar:
