@@ -2,11 +2,11 @@ from flask import Flask, render_template, redirect, url_for
 from flask_frozen import Freezer
 import yaml
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 app.config.from_pyfile('settings.py')
 freezer = Freezer(app)
 
-with open('./data/PageData.yaml') as file:
+with open('./PageData.yaml') as file:
     content = yaml.load(file)
 
 

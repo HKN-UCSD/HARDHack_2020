@@ -88,16 +88,16 @@ sponsors:
         - companyLogo
         - diamondSponsor
       sponsors:
-        - pathToImg: "../static/HARDHack_Files/images/jsoeece.png"
+        - pathToImg: "./static/HARDHack_Files/images/jsoeece.png"
           sponsorName: UC San Diego Jacobs School Of Engineering Electrical and Computer Engineering
-        - pathToImg: "../static/HARDHack_Files/images/TI.png"
+        - pathToImg: "./static/HARDHack_Files/images/TI.png"
           sponsorName: Texas Instruments
     - name: Gold Sponsors
       classes:
         - companyLogo
         - goldSponsor
       sponsors:
-        - pathToImg: "../static/HARDHack_Files/images/qualcomm.png"
+        - pathToImg: "./static/HARDHack_Files/images/qualcomm.png"
           sponsorName: Qualcomm
     - name: ExampleCategory
       classes:
@@ -111,15 +111,15 @@ sponsors:
         - companyLogo
         - hostSponsor
       sponsors:
-        - pathToImg: "../static/HARDHack_Files/images/IEEE_Logo.png"
+        - pathToImg: "./static/HARDHack_Files/images/IEEE_Logo.png"
           sponsorName: IEEE UC San Diego Branch
-        - pathToImg: "../static/HARDHack_Files/images/HKN Logo White.png"
+        - pathToImg: "./static/HARDHack_Files/images/HKN Logo White.png"
           sponsorName: Eta Kappa Nu - Kappa Psi Chapter @ UC San Diego
   forPossibleSponsors:
     message: '<br />Interested in sponsoring us? Please send an email to
     <a href="mailto:hardhack@eng.ucsd.edu">hardhackucsd@gmail.com</a>'
     sponsorButtonText: Sponsorship Package
-    pathToSponsorshipPackage: "../static/HARDHack_Files/files/SponsorshipPackage2019.pdf"
+    pathToSponsorshipPackage: "./static/HARDHack_Files/files/SponsorshipPackage2019.pdf"
 
 contact:
   header: Contact Us
