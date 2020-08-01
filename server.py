@@ -20,6 +20,12 @@ def getFaqbarBGColorForIndex(index, baseColor, colorIncrement):
     return "#{:08x}".format(int(baseColor) + index * int(colorIncrement))
 
 
+@app.template_filter("getTableDataWidth")
+def getTableDataWidth(events):
+    return 100/(len(events[0]))
+    # return "kd"
+
+
 @app.template_filter("getEventContentDisplay")
 def getEventContentDisplay(isEventOver, displayStyle):
     return "none" if isEventOver else displayStyle
@@ -27,7 +33,7 @@ def getEventContentDisplay(isEventOver, displayStyle):
 
 @app.route('/index.html', methods=['GET'])
 def home():
-    return render_template('2019.html', content=content)
+    return render_template('template.html', content=content)
 
 
 if __name__ == "__main__":

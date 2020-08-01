@@ -2,15 +2,14 @@ common:
   eventDate: &eventDate January 17th and 18th, 2020
   eventLocation: &eventLocation Price Center West Ballroom, UC San Diego
   isAfterParticipationRegistrationDeadline: True
-  participationFormLink: &participateLink # Please enter link here
-    "https://forms.gle/NvmJ7ioTYADFseBv5"
+  participationFormLink: &participateLink "https://forms.gle/NvmJ7ioTYADFseBv5" # Please enter link here
   isAfterVolunteerRegistrationDeadline: True
-  volunteerFormLink: &volunteerLink # Please enter link here
-    "https://forms.gle/21AT2gmEjCURN6ABA"
+  volunteerFormLink: &volunteerLink "https://forms.gle/21AT2gmEjCURN6ABA" # Please enter link here
   isHackathonOver: True
 
-base:
+pageMetaData:
   title: H.A.R.D. Hack | UCSD
+  logo: "./static/HARDHack_Files/images/logo.ico"
 
 mainHeader:
   title: H.A.R.D. HACK
@@ -24,9 +23,11 @@ about:
     Anyone can attend, regardless of skill level, major, or university.
 
 faqbar:
-  baseColor: 0x00000010
-  colorIncrement: 0x00000004
+  baseColor: 0x00000010 # Color is denoted in hex RGBA (Red Green Blue Alpha) values
+  colorIncrement: 0x00000004 # Color is denoted in hex RGBA (Red Green Blue Alpha) values
   faqs:
+    # question: The frequently asked question.
+    # answer: The accurate frequently provided answer.
     - question: What is a hackathon?
       answer: A hackathon is a gathering where people collaboratively build a
         project from the ground-up over a short period of time. While
@@ -55,34 +56,57 @@ faqbar:
       answer: *eventDate
 
 schedule:
-  - tableHeader: Pre Hack Workshops
-    tableRows:
-      - datetime: Wednesday (15th)
+  # dayOrPeriod:    --  Usually a large period of time (like before Hackathon, or a day during the Hackathon, after Hackathon, etc.) 
+  #                     Note: When writing about day, please mention date in parenthesis.
+  # events:         --  This will contain a list of events that will happen during the above mentioned time period.
+  #   datetime:     --  The more specific time information (like timing when dayOrPeriod above has a day)
+  #   description:  --  Description of the event
+  #   location:     --  Location of the event
+  - dayOrPeriod: Pre Hack Workshops
+    events:
+      - datetime: Wednesday (15th) | 2:30 - 5:00 PM
         description: Qualcomm Workshop
-        location: EBU1 2512 2:30 - 5:00 PM
-      - datetime: Thursday (16th)
+        location: EBU1 2512
+      - datetime: Thursday (16th) | 4:30 - 6:30 PM
         description: NKK Switches Workshop
-        location: EBU1 2512 4:30 - 6:30 PM
-  - tableHeader: Friday (17th)
-    tableRows:
+        location: EBU1 2512
+  - dayOrPeriod: Friday (17th)
+    events:
       - datetime: 4:00 PM
         description: Gates Open
         location: PC
       - datetime: 4:00 - 6:00 PM
         description: Team Search
         location: PC West Ballroom
-  - tableHeader: Day for following events # Please enter day and date here or Pre/Post Hackathon Events
-    tableRows:
+  - dayOrPeriod: Day for following events # Please enter day and date here or Pre/Post Hackathon Events
+    events:
       - datetime: Time/TimeRange for the event # Please enter day(date) or time
         description: This is a very intereting and popular event # Please provide description of event
         location: In a land far, far away, filled with creativity # Please provide location of event
 
+resources:
+  # resourceProvider:   --  This will be the name of the company or service that has provided the following resources (Note a trailing colon will be added automatically)
+  # resources:          --  This will contain a list of resources.
+  - resourceProvider: Parts
+    resources:
+      - '<a href="https://hardware.mlh.io/events/h-a-r-d-hack" target="_blank">Request parts here</a>'
+  - resourceProvider: Slack Channel - our main form of communication for the hackathon
+    resources:
+      - '<a href="https://hardhackucsd2020.slack.com/join/shared_invite/enQtOTAyNjIyMzcyMjQwLWM3ZjUzZDdhMmRiM2JhYzIwY2UzMjQ5NTA3OTY5ZDI1ODJhMzBhMGEzN2Y2ZjJiNTA2NmQ3MjRmYmZjNmFiZmU" target="_blank">Join the slack channel using this link!</a>'
+  - resourceProvider: Qualcomm
+    resources:
+      - '<a href="https://drive.google.com/file/d/0BwmkGDrkDJN3dE9tZnZoY2I1ekhUenlDLVZ1X3lkTjZLVVlR/view?usp=sharing" target="_blank">Link to Challenge and Resources</a>'
+      - '<a href="https://drive.google.com/file/d/1A308qjq6W4_ZIlr5jYlgwsXbLvcJnmQ6/view" target="_blank">Link to DragonBoard Slides/Documentation</a>'
+      - '<a href="https://drive.google.com/file/d/0BwmkGDrkDJN3YkNjdEdiMDJoSk1od2Vlc3MzdFpRODY2Y2dv/view?usp=sharing" target="_blank">Link to Hack Kit Contents</a>'
+
+
 sponsors:
   categories:
-    # name:     --  This test will be used as header to all sponsors in this category (Note a colon will be added automatically)
+    # name:     --  This test will be used as header to all sponsors in this category (Note a trailing colon will be added automatically)
     # classes:  --  This will be a list of css classes that will be used to style the images in this sponsor section
-    # This will be the image that is displayed
-    # This will be the alternate Text dsplayed if image fails to laod
+    # sponsors: --  This will be a list of sponsors in the given category
+    #   pathToImg   --  This will be the image that is displayed
+    #   sponsorName --  This will be the alternate Text dsplayed if image fails to laod
     - name: Diamond Sponsors
       classes:
         - companyLogo
@@ -116,7 +140,7 @@ sponsors:
         - pathToImg: "./static/HARDHack_Files/images/HKN Logo White.png"
           sponsorName: Eta Kappa Nu - Kappa Psi Chapter @ UC San Diego
   forPossibleSponsors:
-    message: '<br />Interested in sponsoring us? Please send an email to
+    message: 'Interested in sponsoring us? Please send an email to
     <a href="mailto:hardhack@eng.ucsd.edu">hardhackucsd@gmail.com</a>'
     sponsorButtonText: Sponsorship Package
     pathToSponsorshipPackage: "./static/HARDHack_Files/files/SponsorshipPackage2019.pdf"
@@ -127,6 +151,9 @@ contact:
     'For inquiries, please contact us through <a href="https://forms.gle/d4Y774BsYNzDGEzo6" target="_blank">this form</a>!'
 
 socialMedia:
+  # faClasses:          --  List of CSS classes that can help display an icon for the represented social media platform (classes can be found at "https://fontawesome.com/v4.7.0/icons/")
+  # mediaProfileLink:   --  Link to the social media profile
+  # name:               --  Name of social media
   - faClasses:
       - icon
       - brands
@@ -141,3 +168,21 @@ socialMedia:
     name: Facebook
 
 sideBar:
+  # navigateTo: --  Text which will be displayed in the side bar
+  # link:       --  href to the place where clicking the item should take the user.
+  - navigateTo: Home
+    link: "#header"
+  - navigateTo: Announcements
+    link: "#banner"
+  - navigateTo: About
+    link: "#about"
+  - navigateTo: FAQ
+    link: "#faq"
+  - navigateTo: Schedule
+    link: "#schedule"
+  - navigateTo: Resources
+    link: "#resources"
+  - navigateTo: Sponsors
+    link: "#sponsors"
+  - navigateTo: "Contact Us"
+    link: "#contact"
