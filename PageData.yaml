@@ -54,6 +54,8 @@ faqbar:
       answer: *eventLocation
     - question: When is it?
       answer: *eventDate
+    - question: Does ths actually work?
+      answer: Yeah. Isn't that so cool.
 
 schedule:
   # dayOrPeriod:    --  Usually a large period of time (like before Hackathon, or a day during the Hackathon, after Hackathon, etc.) 
