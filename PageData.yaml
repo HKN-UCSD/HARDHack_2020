@@ -186,3 +186,5 @@ sideBar:
     link: "#sponsors"
   - navigateTo: "Contact Us"
     link: "#contact"
+  - navigateTo: Testing
+    link: "#"
