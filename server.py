@@ -3,8 +3,7 @@ from flask_frozen import Freezer
 import yaml
 
 app = Flask(__name__, template_folder=".")
-app.config.from_pyfile('settings.py')
-freezer = Freezer(app)
+app.config.from_pyfile('settings.py')   # Load Freezer specific settings
 
 with open('./PageData.yaml') as file:
     content = yaml.load(file)
@@ -23,7 +22,6 @@ def getFaqbarBGColorForIndex(index, baseColor, colorIncrement):
 @app.template_filter("getTableDataWidth")
 def getTableDataWidth(events):
     return 100/(len(events[0]))
-    # return "kd"
 
 
 @app.template_filter("getEventContentDisplay")
@@ -37,5 +35,4 @@ def home():
 
 
 if __name__ == "__main__":
-    freezer.freeze()
     app.run(debug=True)
