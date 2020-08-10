@@ -4,7 +4,6 @@ import yaml
 
 app = Flask(__name__, template_folder=".")
 
-
 with open('./PageData.yaml') as file:
     content = yaml.load(file)
 
