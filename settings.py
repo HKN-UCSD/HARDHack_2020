@@ -3,7 +3,6 @@
 import os
 
 REPO_NAME = "HARDHack_2020"  # Used for FREEZER_BASE_URL
-DEBUG = True
 
 # Assumes the app is located in the same directory
 # where this file resides
